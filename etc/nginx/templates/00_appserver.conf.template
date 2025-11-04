@@ -61,6 +61,7 @@ server {
         proxy_send_timeout 300;
 
         proxy_hide_header Server;
+        proxy_cookie_flags JSESSIONID secure SameSite=Lax;
         proxy_cookie_flags ~ SameSite=Lax;
 
         # Security headers
