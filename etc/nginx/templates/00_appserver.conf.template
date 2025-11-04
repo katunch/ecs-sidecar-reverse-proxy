@@ -61,8 +61,8 @@ server {
         proxy_send_timeout 300;
 
         proxy_hide_header Server;
-        proxy_cookie_flags JSESSIONID secure SameSite=Lax;
-        proxy_cookie_flags ~ SameSite=Lax;
+        proxy_cookie_flags ~*JSESSIONID httponly secure samesite=Lax;
+        proxy_cookie_flags ~ samesite=lax;
 
         # Security headers
         add_header X-Frame-Options "DENY" always;
